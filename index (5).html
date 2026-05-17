@@ -1,0 +1,563 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" href="/image.png" />
+    <title>VELNOX Watches</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
+    <style>
+      .cat-btn.active {
+        background: white;
+        color: black;
+      }
+    </style>
+  </head>
+
+  <body class="bg-black text-white overflow-x-hidden">
+    <!-- Navbar -->
+    <header class="fixed top-0 left-0 w-full bg-black/90 backdrop-blur-md border-b border-gray-800 z-50">
+      <div class="container mx-auto flex justify-between items-center px-6 py-5">
+        <a href="#" class="flex items-center gap-3">
+          <div class="w-10 h-8 bg-white text-black flex items-center justify-center font-bold text-xl">
+            <img src="/image.png" alt="logo" />
+          </div>
+          <h1 class="text-2xl font-bold tracking-[5px]">VELNOX</h1>
+        </a>
+        <nav class="hidden md:flex gap-8 text-gray-300 font-medium">
+          <button onclick="showSection('home')" class="hover:text-white transition">Home</button>
+          <button onclick="showSection('collection')" class="hover:text-white transition">Collection</button>
+          <button onclick="showSection('orders')" class="hover:text-white transition">Orders</button>
+          <button onclick="showSection('contact')" class="hover:text-white transition">Contact</button>
+        </nav>
+        <button onclick="showSection('checkout')" class="bg-white text-black px-5 py-2 rounded-full font-semibold hover:bg-gray-300 transition">
+          Checkout
+        </button>
+      </div>
+    </header>
+
+    <!-- HOME -->
+    <section id="home" class="min-h-screen flex flex-col">
+      <div class="flex-1 flex items-center pt-24 px-6">
+        <div class="container mx-auto flex flex-col-reverse md:flex-row items-center justify-between">
+          <div class="md:w-1/2">
+            <p class="uppercase tracking-[5px] text-gray-500 mb-4">Luxury Watches</p>
+            <h1 class="text-6xl md:text-7xl font-bold leading-tight mb-6">
+              Modern <span class="text-gray-400">Timepieces</span>
+            </h1>
+            <p class="text-gray-400 text-lg mb-8 leading-relaxed">
+              Discover premium luxury watches crafted with elegance, precision, and modern fashion.
+            </p>
+            <div class="flex gap-4">
+              <button onclick="showSection('collection')" class="bg-white text-black px-8 py-3 rounded-full font-semibold hover:bg-gray-300 transition">
+                Explore Collection
+              </button>
+              <button onclick="showSection('contact')" class="border border-gray-700 px-8 py-3 rounded-full hover:bg-white hover:text-black transition">
+                Contact Us
+              </button>
+            </div>
+          </div>
+          <div class="md:w-1/2 flex justify-center mb-10 md:mb-0">
+            <img
+              id="heroImage"
+              class="w-[500px] rounded-3xl shadow-[0_0_40px_rgba(255,255,255,0.1)] transition duration-500"
+              src="https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1200&auto=format&fit=crop"
+              alt="Velnox Watch"
+            />
+          </div>
+        </div>
+      </div>
+
+      <!-- FOOTER (Home ke niche) -->
+      <footer class="border-t border-gray-800 mt-16 px-6 py-12 bg-[#0a0a0a]">
+        <div class="container mx-auto">
+          <div class="grid md:grid-cols-4 gap-10 mb-10">
+            <!-- Brand -->
+            <div>
+              <h2 class="text-2xl font-bold tracking-[5px] mb-4">VELNOX</h2>
+              <p class="text-gray-500 text-sm leading-relaxed">
+                Premium luxury timepieces crafted with elegance and precision. Wear the time, own the moment.
+              </p>
+            </div>
+            <!-- Quick Links -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4 text-white">Quick Links</h3>
+              <ul class="space-y-2 text-gray-500 text-sm">
+                <li><button onclick="showSection('home')" class="hover:text-white transition">Home</button></li>
+                <li><button onclick="showSection('collection')" class="hover:text-white transition">Collection</button></li>
+                <li><button onclick="showSection('orders')" class="hover:text-white transition">Orders</button></li>
+                <li><button onclick="showSection('checkout')" class="hover:text-white transition">Checkout</button></li>
+              </ul>
+            </div>
+            <!-- Categories -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4 text-white">Categories</h3>
+              <ul class="space-y-2 text-gray-500 text-sm">
+                <li>Classic Watches</li>
+                <li>Luxury Collection</li>
+                <li>Sport Watches</li>
+                <li>Ladies Collection</li>
+                <li>Limited Edition</li>
+              </ul>
+            </div>
+            <!-- Contact -->
+            <div>
+              <h3 class="text-lg font-semibold mb-4 text-white">Contact</h3>
+              <ul class="space-y-2 text-gray-500 text-sm">
+                <li>📞 +92 3249445526</li>
+                <li>📍 Lahore, Pakistan</li>
+                <li>✉️ info@velnox.com</li>
+              </ul>
+              <div class="flex gap-3 mt-4">
+                <div class="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black transition cursor-pointer text-sm">f</div>
+                <div class="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black transition cursor-pointer text-sm">in</div>
+                <div class="w-9 h-9 rounded-full border border-gray-700 flex items-center justify-center hover:bg-white hover:text-black transition cursor-pointer text-sm">ig</div>
+              </div>
+            </div>
+          </div>
+          <div class="border-t border-gray-800 pt-6 text-center text-gray-600 text-sm">
+            © 2025 VELNOX Watches. All rights reserved. Crafted with precision.
+          </div>
+        </div>
+      </footer>
+    </section>
+
+    <!-- COLLECTION -->
+    <section id="collection" class="hidden min-h-screen pt-32 px-6 pb-20">
+      <div class="container mx-auto">
+        <div class="text-center mb-14">
+          <h2 class="text-5xl font-bold mb-4">Our Collection</h2>
+          <p class="text-gray-400">Find your perfect timepiece</p>
+        </div>
+
+        <!-- Category Filter Buttons -->
+        <div class="flex flex-wrap justify-center gap-3 mb-8">
+          <button onclick="filterCategory('all')" data-cat="all" class="cat-btn active px-6 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-white hover:text-black transition">
+            🕐 All Watches
+          </button>
+          <button onclick="filterCategory('classic')" data-cat="classic" class="cat-btn flex items-center gap-2 px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-white hover:text-black transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3v1m0 16v1m8.66-9h-1M4.34 12h-1m15.07-6.07-.71.71M5.64 18.36l-.71.71m12.02 0-.71-.71M5.64 5.64l-.71-.71M12 7a5 5 0 100 10A5 5 0 0012 7z"/></svg>
+            Classic
+          </button>
+          <button onclick="filterCategory('sport')" data-cat="sport" class="cat-btn flex items-center gap-2 px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-white hover:text-black transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M13 10V3L4 14h7v7l9-11h-7z"/></svg>
+            Sport
+          </button>
+          <button onclick="filterCategory('luxury')" data-cat="luxury" class="cat-btn flex items-center gap-2 px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-white hover:text-black transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M11.48 3.499a.562.562 0 011.04 0l2.125 5.111a.563.563 0 00.475.345l5.518.442c.499.04.701.663.321.988l-4.204 3.602a.563.563 0 00-.182.557l1.285 5.385a.562.562 0 01-.84.61l-4.725-2.885a.563.563 0 00-.586 0L6.982 20.54a.562.562 0 01-.84-.61l1.285-5.386a.562.562 0 00-.182-.557l-4.204-3.602a.563.563 0 01.321-.988l5.518-.442a.563.563 0 00.475-.345L11.48 3.5z"/></svg>
+            Luxury
+          </button>
+          <button onclick="filterCategory('diver')" data-cat="diver" class="cat-btn flex items-center gap-2 px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-white hover:text-black transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M12 3c-4.97 0-9 4.03-9 9s4.03 9 9 9 9-4.03 9-9-4.03-9-9-9zm0 0v4m0 5v4m-4-4h4m5 0h-5"/></svg>
+            Diver
+          </button>
+          <button onclick="filterCategory('pilot')" data-cat="pilot" class="cat-btn flex items-center gap-2 px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-white hover:text-black transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M6 12L3.269 3.126A59.768 59.768 0 0121.485 12 59.77 59.77 0 013.27 20.876L5.999 12zm0 0h7.5"/></svg>
+            Pilot
+          </button>
+          <button onclick="filterCategory('dress')" data-cat="dress" class="cat-btn flex items-center gap-2 px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-white hover:text-black transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9.813 15.904L9 18.75l-.813-2.846a4.5 4.5 0 00-3.09-3.09L2.25 12l2.846-.813a4.5 4.5 0 003.09-3.09L9 5.25l.813 2.846a4.5 4.5 0 003.09 3.09L15.75 12l-2.846.813a4.5 4.5 0 00-3.09 3.09z"/></svg>
+            Dress
+          </button>
+          <button onclick="filterCategory('tactical')" data-cat="tactical" class="cat-btn flex items-center gap-2 px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-white hover:text-black transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75L11.25 15 15 9.75m-3-7.036A11.959 11.959 0 013.598 6 11.99 11.99 0 003 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285z"/></svg>
+            Tactical
+          </button>
+          <button onclick="filterCategory('ladies')" data-cat="ladies" class="cat-btn flex items-center gap-2 px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-white hover:text-black transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M21 8.25c0-2.485-2.099-4.5-4.688-4.5-1.935 0-3.597 1.126-4.312 2.733-.715-1.607-2.377-2.733-4.313-2.733C5.1 3.75 3 5.765 3 8.25c0 7.22 9 12 9 12s9-4.78 9-12z"/></svg>
+            Ladies
+          </button>
+          <button onclick="filterCategory('limited')" data-cat="limited" class="cat-btn flex items-center gap-2 px-5 py-2 rounded-full border border-gray-600 text-sm font-semibold hover:bg-white hover:text-black transition">
+            <svg class="w-4 h-4" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 013 3h-15a3 3 0 013-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 01-.982-3.172M9.497 14.25a7.454 7.454 0 00.981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 007.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 002.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 012.916.52 6.003 6.003 0 01-5.395 4.972m0 0a6.726 6.726 0 01-2.749 1.35m0 0a6.772 6.772 0 01-3.044 0"/></svg>
+            Limited Edition
+          </button>
+        </div>
+
+        <!-- Count Label -->
+        <div class="text-center mb-10">
+          <span id="categoryLabel" class="text-gray-400 text-base"></span>
+        </div>
+
+        <!-- Products Grid -->
+        <div id="productsGrid" class="grid md:grid-cols-3 lg:grid-cols-4 gap-8"></div>
+      </div>
+    </section>
+
+    <!-- ORDERS -->
+    <section id="orders" class="hidden min-h-screen pt-32 px-6">
+      <div class="container mx-auto max-w-5xl">
+        <div class="text-center mb-14">
+          <h2 class="text-5xl font-bold mb-4">Your Orders</h2>
+          <p class="text-gray-400">Added Products</p>
+        </div>
+        <div id="orderList" class="space-y-6">
+          <p id="emptyMsg" class="text-center text-gray-500 py-10">No items added yet.</p>
+        </div>
+      </div>
+    </section>
+
+    <!-- CHECKOUT -->
+    <section id="checkout" class="hidden min-h-screen pt-32 px-6">
+      <div class="container mx-auto max-w-3xl">
+        <div class="text-center mb-12">
+          <h2 class="text-5xl font-bold mb-4">Account Details</h2>
+          <p class="text-gray-400">Complete your order</p>
+        </div>
+        <div class="space-y-6">
+          <input id="customerName" type="text" placeholder="Full Name" class="w-full bg-[#111] border border-gray-700 p-4 rounded-xl outline-none" />
+          <input id="customerEmail" type="email" placeholder="Email Address" class="w-full bg-[#111] border border-gray-700 p-4 rounded-xl outline-none" />
+          <input id="customerPhone" type="text" placeholder="Phone Number" class="w-full bg-[#111] border border-gray-700 p-4 rounded-xl outline-none" />
+          <input id="customerAddress" type="text" placeholder="Shipping Address" class="w-full bg-[#111] border border-gray-700 p-4 rounded-xl outline-none" />
+          <button onclick="confirmOrder()" id="confirmBtn" class="w-full bg-white text-black py-4 rounded-xl font-bold hover:bg-gray-300 transition">
+            Confirm Order
+          </button>
+          <div id="orderMsg" class="hidden text-center py-4 rounded-xl font-semibold"></div>
+        </div>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="contact" class="hidden min-h-screen pt-32 px-6 bg-[#0f0f0f]">
+      <div class="container mx-auto">
+        <div class="text-center mb-14">
+          <h2 class="text-5xl font-bold mb-4">Contact Us</h2>
+          <p class="text-gray-400">We are always here for you</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-8">
+          <div class="bg-black border border-gray-800 p-8 rounded-3xl text-center">
+            <h3 class="text-2xl font-bold mb-3">Phone</h3>
+            <p class="text-gray-400">+92 3249445526</p>
+          </div>
+          <div class="bg-black border border-gray-800 p-8 rounded-3xl text-center">
+            <h3 class="text-2xl font-bold mb-3">Address</h3>
+            <p class="text-gray-400">Lahore, Pakistan</p>
+          </div>
+          <div class="bg-black border border-gray-800 p-8 rounded-3xl text-center">
+            <h3 class="text-2xl font-bold mb-3">Email</h3>
+            <p class="text-gray-400">info@velnox.com</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <script>
+      // ── SECTION TOGGLE ────────────────────────────────────────────
+      function showSection(sectionId) {
+        ["home", "collection", "orders", "checkout", "contact"].forEach((id) => {
+          document.getElementById(id).classList.add("hidden");
+        });
+        document.getElementById(sectionId).classList.remove("hidden");
+      }
+
+      // ── HERO AUTO IMAGE ───────────────────────────────────────────
+      const heroImages = [
+        "https://images.unsplash.com/photo-1547996160-81dfa63595aa?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1518546305927-5a555bb7020d?q=80&w=1200&auto=format&fit=crop",
+        "https://images.unsplash.com/photo-1508057198894-247b23fe5ade?q=80&w=1200&auto=format&fit=crop",
+      ];
+      let currentImage = 0;
+      setInterval(() => {
+        currentImage = (currentImage + 1) % heroImages.length;
+        document.getElementById("heroImage").src = heroImages[currentImage];
+      }, 3000);
+
+      // ── WATCHES DATA ──────────────────────────────────────────────
+      const watches = [
+        { id: 1, cat: "classic", name: "Velnox Noir Elite", desc: "Matte black dial, sapphire glass, Swiss quartz movement.", price: 149, img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" },
+        { id: 2, cat: "classic", name: "Velnox Silver Prestige", desc: "Brushed silver case, minimalist white dial, leather strap.", price: 189, img: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=600&q=80" },
+        { id: 3, cat: "luxury", name: "Velnox Chronos Gold", desc: "18K gold-plated case, chronograph, Italian leather band.", price: 299, img: "https://i0.wp.com/kaisz.pk/wp-content/uploads/2025/01/REWARD-QUARTZ-Wrist-Watch-kaisz-1.webp?fit=1280%2C1280&ssl=1" },
+        { id: 4, cat: "classic", name: "Velnox Arctic White", desc: "All-white ceramic case, ultra-thin movement, fully waterproof.", price: 219, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS4zKCalw1h-PpcUdRNOKyYf7OhEHx9e46RXA&s" },
+        { id: 5, cat: "tactical", name: "Velnox Phantom Pro", desc: "Stealth black PVD coating, skeleton dial, anti-reflective glass.", price: 259, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTsgdsOg3PVZqdbAq02Yw1wXYfJd5uPDCgyhw&s" },
+        { id: 6, cat: "classic", name: "Velnox Heritage Classic", desc: "Vintage-inspired dial, stainless steel, exhibition caseback.", price: 179, img: "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=600&q=80" },
+        { id: 7, cat: "diver", name: "Velnox Marine Diver", desc: "300m water resistant, rotating bezel, NATO fabric strap.", price: 239, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSTivSSm3ta1oAWybWud_NbV6XkucOm5rczqg&s" },
+        { id: 8, cat: "classic", name: "Velnox Urban Slate", desc: "Dark grey dial, mesh bracelet, date complication window.", price: 169, img: "https://images.unsplash.com/photo-1622434641406-a158123450f9?w=600&q=80" },
+        { id: 9, cat: "ladies", name: "Velnox Rose Luxe", desc: "Rose gold bezel, mother of pearl dial, crystal hour markers.", price: 279, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRot2dT6JFwncFUufDlC9D8-Jqg7MQ0HR7OPA&s" },
+        { id: 10, cat: "sport", name: "Velnox Apex Titanium", desc: "Lightweight titanium case, scratch-resistant coating, sport strap.", price: 349, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQCu-3YjRsTyhs9XIGCTtiGEOIpqmJJO0-Rlg&s" },
+        { id: 11, cat: "tactical", name: "Velnox Onyx Midnight", desc: "Deep black dial, luminous hands and markers, rubber sport band.", price: 159, img: "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=600&q=80" },
+        { id: 12, cat: "classic", name: "Velnox Classic Ivory", desc: "Cream dial, gold-tone indices, vintage brown leather strap.", price: 195, img: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&q=80" },
+        { id: 13, cat: "sport", name: "Velnox Carbon Racer", desc: "Carbon fiber textured dial, racing-style indices, chronograph.", price: 289, img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&q=80" },
+        { id: 14, cat: "classic", name: "Velnox Sapphire Blue", desc: "Deep blue sunray dial, stainless steel bracelet, date window.", price: 225, img: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=600&q=80" },
+        { id: 15, cat: "classic", name: "Velnox Desert Bronze", desc: "Warm bronze case, earthy tan dial, genuine suede strap.", price: 205, img: "https://images.unsplash.com/photo-1619134778706-7015533a6150?w=600&q=80" },
+        { id: 16, cat: "diver", name: "Velnox Glacier Ice", desc: "Light blue dial, silver case, ultra-clear anti-fog crystal.", price: 185, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT0iMu2nEPM5vpoVCQvZPNC9auDLHk952d_zQ&s" },
+        { id: 17, cat: "dress", name: "Velnox Executive Black", desc: "All-black dress watch, ultra-slim profile, formal leather strap.", price: 269, img: "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=600&q=80" },
+        { id: 18, cat: "pilot", name: "Velnox Green Pilot", desc: "Olive green dial, oversized crown, classic pilot-style indices.", price: 235, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSk1jWkh8tvGSaMLQorOJmk97rs4KHaVFD1Sw&s" },
+        { id: 19, cat: "sport", name: "Velnox Sport Fusion", desc: "Dual time zone display, tachymeter bezel, silicone sport strap.", price: 175, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQti6Q6VD7D4Y5Yi73Hg5PD0L4-TfPHnsYfMQ&s" },
+        { id: 20, cat: "dress", name: "Velnox Burgundy Prime", desc: "Deep red sunburst dial, gold hands, premium dress collection.", price: 215, img: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=600&q=80" },
+        { id: 21, cat: "ladies", name: "Velnox Luna Pearl", desc: "White mother of pearl dial, diamond markers, elegant bracelet.", price: 399, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQNLUZ5ZU0hCZhm8FjMpLJnDhtjKWpwpbAf7Q&s" },
+        { id: 22, cat: "tactical", name: "Velnox Stealth Grey", desc: "Gunmetal grey case, anti-scratch PVD, tactical clean design.", price: 199, img: "https://images.unsplash.com/photo-1622434641406-a158123450f9?w=600&q=80" },
+        { id: 23, cat: "sport", name: "Velnox Velocity X", desc: "Stopwatch function, bold numerals, sporty rubber strap.", price: 155, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQY47zKdMI49MlpintYy70VGUNJAFrTyzjNyw&s" },
+        { id: 24, cat: "classic", name: "Velnox Copper Rush", desc: "Warm copper-toned case, vintage-style hands, leather band.", price: 185, img: "https://images.unsplash.com/photo-1619134778706-7015533a6150?w=600&q=80" },
+        { id: 25, cat: "luxury", name: "Velnox Infinity Dark", desc: "Dark black men watch with endless darkness", price: 319, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTmNfhqPkjGN8usp6VHamfnO7WHIy-faj4ZcA&s" },
+        { id: 26, cat: "sport", name: "Velnox Summit Alpine", desc: "High altitude design, compass-style bezel, rugged steel build.", price: 255, img: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&q=80" },
+        { id: 27, cat: "limited", name: "Velnox Mosaic Dial", desc: "Multi-layer textured dial, artistic indices, one-of-a-kind design.", price: 229, img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&q=80" },
+        { id: 28, cat: "pilot", name: "Velnox Royal Navy", desc: "Deep blue case, gold crown, naval-inspired premium timepiece.", price: 245, img: "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=600&q=80" },
+        { id: 29, cat: "tactical", name: "Velnox Forest Ranger", desc: "Earthy olive green, rugged stainless case, adventure-ready.", price: 195, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSWQl76vS3LPO7EzCawHY74XazynVFWuRdPOw&s" },
+        { id: 30, cat: "sport", name: "Velnox Neon Edge", desc: "Bold neon accents on black dial, youth-focused street design.", price: 149, img: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=600&q=80" },
+        { id: 31, cat: "luxury", name: "Velnox Marble Luxe", desc: "White marble-textured dial, gold bezel, luxury statement piece.", price: 335, img: "https://images.unsplash.com/photo-1619134778706-7015533a6150?w=600&q=80" },
+        { id: 32, cat: "diver", name: "Velnox Midnight Storm", desc: "Navy blue storm-texture dial, silver indices, steel bracelet.", price: 209, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSYEksL1VpQAUG3Ecy4zgOHB1z2PVMoASVHxg&s" },
+        { id: 33, cat: "luxury", name: "Velnox Prestige Noir", desc: "Jet black case with gold accents, premium formal dress watch.", price: 375, img: "https://images.unsplash.com/photo-1547996160-81dfa63595aa?w=600&q=80" },
+        { id: 34, cat: "dress", name: "Velnox Amber Glow", desc: "Warm amber sunburst dial, bronze case, Italian leather strap.", price: 219, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTvCFjTdQO6lKpCLez6eYNEHn6BImH_iOL2Zw&s" },
+        { id: 35, cat: "sport", name: "Velnox Circuit Tech", desc: "Tech-inspired PCB-pattern dial, digital-analogue hybrid design.", price: 189, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQN96Q6ND1y-kIwAPSzihi8Ib35vvRaH28g6Q&s" },
+        { id: 36, cat: "luxury", name: "Velnox Pure Platinum", desc: "Platinum-plated polished case, white dial, ultra-luxury collection.", price: 449, img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&q=80" },
+        { id: 37, cat: "limited", name: "Velnox Eclipse Dark", desc: "Total eclipse motif on dial, celestial limited-run collection.", price: 259, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTJppEl5EX4QuU2MOwX41Y3rbaCLpK9PjQB3Q&s" },
+        { id: 38, cat: "classic", name: "Velnox Sand Dune", desc: "Sandy beige texture dial, minimalist summer-inspired collection.", price: 165, img: "https://images.unsplash.com/photo-1548169874-53e85f753f1e?w=600&q=80" },
+        { id: 39, cat: "tactical", name: "Velnox Iron Wolf", desc: "Industrial grey finish, bold thick case, masculine design.", price: 199, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSwXaedMwfQ2ydAP1lWLxmUBVXaZAhwLTP-rQ&s" },
+        { id: 40, cat: "luxury", name: "Velnox Crystal Vision", desc: "Transparent crystal dial, open-heart movement fully visible.", price: 369, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTlhRRvtn_yMbNKYguYZy1sV7zajfDYjaevDw&s" },
+        { id: 41, cat: "diver", name: "Velnox Tidal Wave", desc: "Ocean blue dial, wave-pattern bezel, waterproof up to 200m.", price: 235, img: "https://images.unsplash.com/photo-1622434641406-a158123450f9?w=600&q=80" },
+        { id: 42, cat: "dress", name: "Velnox Cardinal Red", desc: "Vivid red sunray dial, polished silver case, bold statement.", price: 185, img: "https://images.unsplash.com/photo-1524592094714-0f0654e20314?w=600&q=80" },
+        { id: 43, cat: "classic", name: "Velnox Velvet Brown", desc: "Rich brown leather strap, warm-toned dial, timeless classic style.", price: 175, img: "https://images.unsplash.com/photo-1434056886845-dac89ffe9b56?w=600&q=80" },
+        { id: 44, cat: "diver", name: "Velnox Glacier Peak", desc: "Ice blue dial, anti-fog crystal glass, mountaineering edition.", price: 249, img: "https://images.unsplash.com/photo-1614164185128-e4ec99c436d7?w=600&q=80" },
+        { id: 45, cat: "tactical", name: "Velnox Shadow Force", desc: "All-black tactical build, military-grade, subdued indices.", price: 269, img: "https://images.unsplash.com/photo-1523275335684-37898b6baf30?w=600&q=80" },
+        { id: 46, cat: "ladies", name: "Velnox Sunburst Gold", desc: "Sunburst yellow-gold dial, radiant polished finish, summer feel.", price: 195, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTqXTgZYAAPhONiYo7bpKmtj39lOc_6FYURzA&s" },
+        { id: 47, cat: "tactical", name: "Velnox Mossy Oak", desc: "Earthy olive tone, deeply textured dial, nature-inspired design.", price: 179, img: "https://images.unsplash.com/photo-1619134778706-7015533a6150?w=600&q=80" },
+        { id: 48, cat: "ladies", name: "Velnox Infinity Rose", desc: "Rose gold case, blush pink dial, ladies luxury collection.", price: 295, img: "https://images.unsplash.com/photo-1587836374828-4dbafa94cf0e?w=600&q=80" },
+        { id: 49, cat: "sport", name: "Velnox Storm Chaser", desc: "Oversized bold case, weather-sealed, outdoor adventure series.", price: 225, img: "https://images.unsplash.com/photo-1508685096489-7aacd43bd3b1?w=600&q=80" },
+        { id: 50, cat: "dress", name: "Velnox Zenith Silver", desc: "Pure silver case, zen minimalist clean dial, calming design.", price: 215, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkzbIw7si9_hUJ7ogVHbaV55Hu58aJ5L_kUA&s" },
+        { id: 51, cat: "limited", name: "Velnox Ember Dusk", desc: "Warm orange-red sunset gradient dial, limited edition release.", price: 279, img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR-civVMAhiaY2g0fDN4Q_ZCwd4UcA1qB7kWg&s" },
+        { id: 52, cat: "limited", name: "Velnox Obsidian King", desc: "Ultra-premium obsidian black, diamond dust bezel, flagship model.", price: 499, img: "https://images.unsplash.com/photo-1522312346375-d1a52e2b99b3?w=600&q=80" },
+      ];
+
+      // ── CATEGORY STYLES ───────────────────────────────────────────
+      const catStyle = {
+        classic:  { bg: "bg-gray-700",   text: "text-gray-200",   label: "Classic" },
+        sport:    { bg: "bg-blue-900",   text: "text-blue-200",   label: "Sport" },
+        luxury:   { bg: "bg-yellow-900", text: "text-yellow-200", label: "Luxury" },
+        diver:    { bg: "bg-cyan-900",   text: "text-cyan-200",   label: "Diver" },
+        pilot:    { bg: "bg-indigo-900", text: "text-indigo-200", label: "Pilot" },
+        dress:    { bg: "bg-purple-900", text: "text-purple-200", label: "Dress" },
+        tactical: { bg: "bg-green-900",  text: "text-green-200",  label: "Tactical" },
+        ladies:   { bg: "bg-pink-900",   text: "text-pink-200",   label: "Ladies" },
+        limited:  { bg: "bg-red-900",    text: "text-red-200",    label: "Limited" },
+      };
+
+      const catTitles = {
+        all: "All Watches", classic: "Classic Watches", sport: "Sport Watches",
+        luxury: "Luxury Watches", diver: "Diver Watches", pilot: "Pilot Watches",
+        dress: "Dress Watches", tactical: "Tactical Watches",
+        ladies: "Ladies Collection", limited: "Limited Edition",
+      };
+
+      // ── RENDER WATCHES ────────────────────────────────────────────
+      function renderWatches(cat) {
+        const grid = document.getElementById("productsGrid");
+        const label = document.getElementById("categoryLabel");
+        const list = cat === "all" ? watches : watches.filter((w) => w.cat === cat);
+
+        label.textContent = cat === "all"
+          ? `Showing all ${watches.length} watches`
+          : `${catTitles[cat]} — ${list.length} watches`;
+
+        grid.innerHTML = "";
+        if (!list.length) {
+          grid.innerHTML = '<p class="col-span-4 text-center text-gray-500 py-20">No watches in this category.</p>';
+          return;
+        }
+
+        list.forEach((w) => {
+          const s = catStyle[w.cat] || catStyle.classic;
+          grid.innerHTML += `
+            <div class="bg-black border border-gray-800 rounded-3xl overflow-hidden hover:scale-105 transition duration-500">
+              <div class="relative">
+                <img class="w-full h-72 object-cover" src="${w.img}" alt="${w.name}">
+                <span class="absolute top-3 left-3 px-3 py-1 rounded-full text-xs font-bold ${s.bg} ${s.text}">
+                  ${s.label}
+                </span>
+              </div>
+              <div class="p-5">
+                <h3 class="text-xl font-bold mb-2">${w.name}</h3>
+                <p class="text-gray-400 text-sm mb-4">${w.desc}</p>
+                <div class="flex justify-between items-center mb-4">
+                  <span class="text-2xl font-bold">$${w.price}</span>
+                </div>
+                <div class="flex gap-3">
+                  <button onclick="addToCart(${w.id})"
+                    class="w-1/2 bg-white text-black py-2 rounded-xl font-semibold hover:bg-gray-300 transition">
+                    Add To Cart
+                  </button>
+                  <button onclick="showSection('checkout')"
+                    class="w-1/2 border border-gray-700 py-2 rounded-xl hover:bg-white hover:text-black transition">
+                    Buy Now
+                  </button>
+                </div>
+              </div>
+            </div>`;
+        });
+      }
+
+      // ── FILTER ────────────────────────────────────────────────────
+      function filterCategory(cat) {
+        document.querySelectorAll(".cat-btn").forEach((btn) => {
+          btn.classList.remove("active");
+          if (btn.dataset.cat === cat) btn.classList.add("active");
+        });
+        renderWatches(cat);
+      }
+
+      // ── CART ──────────────────────────────────────────────────────
+      let cartItems = JSON.parse(localStorage.getItem("velnoxCart")) || [];
+
+      function saveCart() {
+        localStorage.setItem("velnoxCart", JSON.stringify(cartItems));
+      }
+
+      function addToCart(id) {
+        const w = watches.find((w) => w.id === id);
+        const existing = cartItems.find((item) => item.id === id);
+        if (existing) {
+          existing.qty += 1;
+        } else {
+          cartItems.push({ ...w, qty: 1 });
+        }
+        saveCart();
+        updateOrders();
+        alert("✅ " + w.name + " added to Orders!");
+      }
+
+      function increaseQty(id) {
+        const item = cartItems.find((w) => w.id === id);
+        if (item) item.qty += 1;
+        saveCart();
+        updateOrders();
+      }
+
+      function decreaseQty(id) {
+        const item = cartItems.find((w) => w.id === id);
+        if (item) {
+          if (item.qty > 1) {
+            item.qty -= 1;
+          } else {
+            cartItems = cartItems.filter((w) => w.id !== id);
+          }
+        }
+        saveCart();
+        updateOrders();
+      }
+
+      function removeOrder(id) {
+        cartItems = cartItems.filter((w) => w.id !== id);
+        saveCart();
+        updateOrders();
+      }
+
+      function updateOrders() {
+        const orderList = document.getElementById("orderList");
+        orderList.innerHTML = "";
+
+        if (cartItems.length === 0) {
+          orderList.innerHTML = `<p class="text-center text-gray-500 py-10">No items added yet.</p>`;
+          return;
+        }
+
+        cartItems.forEach((w) => {
+          const s = catStyle[w.cat] || catStyle.classic;
+          orderList.innerHTML += `
+            <div class="bg-[#111] border border-gray-800 rounded-3xl p-6 flex flex-col lg:flex-row justify-between items-center gap-5">
+              <div class="flex items-center gap-5">
+                <img src="${w.img}" class="w-28 h-28 object-cover rounded-2xl">
+                <div>
+                  <span class="inline-block mb-2 px-3 py-1 rounded-full text-xs font-bold ${s.bg} ${s.text}">${s.label}</span>
+                  <h3 class="text-2xl font-bold">${w.name}</h3>
+                  <p class="text-gray-400 text-sm">${w.desc}</p>
+                  <p class="text-xl font-bold mt-2">$${w.price}</p>
+                </div>
+              </div>
+              <div class="flex items-center gap-3">
+                <button onclick="decreaseQty(${w.id})" class="bg-gray-800 w-10 h-10 rounded-full text-xl">-</button>
+                <span class="text-2xl font-bold w-10 text-center">${w.qty}</span>
+                <button onclick="increaseQty(${w.id})" class="bg-white text-black w-10 h-10 rounded-full text-xl">+</button>
+              </div>
+              <div class="flex gap-3">
+                <button onclick="showSection('checkout')" class="bg-white text-black px-5 py-2 rounded-xl font-semibold">Place Order</button>
+                <button onclick="removeOrder(${w.id})" class="bg-red-600 px-5 py-2 rounded-xl font-semibold">Remove</button>
+              </div>
+            </div>`;
+        });
+      }
+
+      // ── EMAILJS INIT ──────────────────────────────────────────────
+      emailjs.init("LznmmCQLkEev0wB_M");
+
+      const SHEET_URL = "https://script.google.com/macros/s/AKfycbwlQRHu4-leo1fNwEZsEhkUbHtc-2N-j-5GZf-QtNSLCSDMxOtzo82-whAZtPDcz64k/exec";
+
+      function confirmOrder() {
+        const name    = document.getElementById("customerName").value.trim();
+        const email   = document.getElementById("customerEmail").value.trim();
+        const phone   = document.getElementById("customerPhone").value.trim();
+        const address = document.getElementById("customerAddress").value.trim();
+        const msg     = document.getElementById("orderMsg");
+        const btn     = document.getElementById("confirmBtn");
+
+        if (!name || !email || !phone || !address) {
+          msg.textContent = "⚠️ Sab fields bharo!";
+          msg.className = "text-center py-4 rounded-xl font-semibold text-yellow-400";
+          msg.classList.remove("hidden");
+          return;
+        }
+
+        const items = cartItems.length > 0
+          ? cartItems.map(w => `${w.name} x${w.qty} ($${w.price})`).join(", ")
+          : "No items in cart";
+
+        const totalAmount = cartItems.reduce((sum, w) => sum + (w.price * w.qty), 0);
+        const orderDate = new Date().toLocaleString("en-PK", { timeZone: "Asia/Karachi" });
+
+        btn.textContent = "Sending...";
+        btn.disabled = true;
+
+        // 1. Google Sheet mein save karo
+        fetch(SHEET_URL, {
+          method: "POST",
+          mode: "no-cors",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ name, email, phone, address, items })
+        });
+
+        // 2. Customer ko email bhejo EmailJS se
+        emailjs.send("service_mvjngfq", "template_yar7xqh", {
+          customer_name: name,
+          customer_email: email,
+          phone: phone,
+          address: address,
+          items: items,
+          total_amount: "$" + totalAmount,
+          order_date: orderDate
+        })
+        .then(() => {
+          msg.textContent = "✅ Order confirm ho gaya! Email bhi bhej di gayi!";
+          msg.className = "text-center py-4 rounded-xl font-semibold text-green-400";
+          msg.classList.remove("hidden");
+          btn.textContent = "Confirm Order";
+          btn.disabled = false;
+          document.getElementById("customerName").value = "";
+          document.getElementById("customerEmail").value = "";
+          document.getElementById("customerPhone").value = "";
+          document.getElementById("customerAddress").value = "";
+          cartItems = [];
+          saveCart();
+          updateOrders();
+        })
+        .catch((error) => {
+          console.error("EmailJS Error:", error);
+          msg.textContent = "✅ Order save ho gaya! (Email delay ho sakti hai)";
+          msg.className = "text-center py-4 rounded-xl font-semibold text-green-400";
+          msg.classList.remove("hidden");
+          btn.textContent = "Confirm Order";
+          btn.disabled = false;
+          document.getElementById("customerName").value = "";
+          document.getElementById("customerEmail").value = "";
+          document.getElementById("customerPhone").value = "";
+          document.getElementById("customerAddress").value = "";
+          cartItems = [];
+          saveCart();
+          updateOrders();
+        });
+      }
+
+      // ── INIT ──────────────────────────────────────────────────────
+      renderWatches("all");
+      updateOrders();
+    </script>
+  </body>
+</html>
